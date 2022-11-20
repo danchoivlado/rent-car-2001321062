@@ -1,9 +1,11 @@
 import "./job.scss";
 import useImportImage from "../../hooks/useImportImage";
 import { useThemeContext } from "../../providers/ThemeContext";
+import { Link } from "react-router-dom";
 
 interface Props {
   jobInfo: {
+    id: number;
     logo: string;
     postedAt: string;
     contract: string;
@@ -16,6 +18,7 @@ interface Props {
 
 const JobItem = ({ jobInfo }: Props) => {
   const {
+    id,
     company,
     contract,
     location,
@@ -43,11 +46,15 @@ const JobItem = ({ jobInfo }: Props) => {
         &nbsp; &middot; &nbsp;
         {contract}
       </p>
-      <p
-        className={`job-tittle ${darkThemeEnabled ? "whiteText" : "darkText"}`}
-      >
-        {position}
-      </p>
+      <Link style={{ textDecoration: "none" }} to={`/${id}`}>
+        <p
+          className={`job-tittle ${
+            darkThemeEnabled ? "whiteText" : "darkText"
+          }`}
+        >
+          {position}
+        </p>
+      </Link>
       <p className="lightText">{company}</p>
       <p className="location">{location}</p>
     </div>

@@ -1,12 +1,15 @@
 import "./header.scss";
 import logo from "../../assets/desktop/logo.svg";
 import Toggle from "../toggle/Toggle";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header>
       <div className="headerContainer contentPadding">
-        <img src={logo} alt="" />
+        <Link to={"/"}>
+          <img src={logo} alt="" />
+        </Link>
         <Toggle />
       </div>
     </header>

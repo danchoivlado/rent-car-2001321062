@@ -6,10 +6,8 @@ const Home = () => {
   return (
     <>
       <div className="wrapperContainer">
-        <JobsContex>
-          <Search />
-          <Jobs />
-        </JobsContex>
+        <Search />
+        <Jobs />
       </div>
     </>
   );
