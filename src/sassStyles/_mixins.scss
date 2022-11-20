@@ -1,0 +1,46 @@
+@use "./variables" as v;
+
+@mixin mdMinBreakPoint {
+  @media (min-width: #{v.$screen-md}) {
+    @content;
+  }
+}
+
+@mixin lgMinBreakPoint {
+  @media (min-width: #{v.$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin customMinBreakPoint($size) {
+  @media (min-width: $size+"em") {
+    @content;
+  }
+}
+
+@mixin customMaxBreakPoint($size) {
+  @media (max-width: $size+"em") {
+    @content;
+  }
+}
+
+@mixin customDisplayresponsive($initial, $computed, $device) {
+  display: $initial;
+
+  @if $device == md {
+    @include mdMinBreakPoint {
+      display: $computed;
+    }
+  } @else if $device == lg {
+    @include lgMinBreakPoint {
+      display: $computed;
+    }
+  } @else if $device == all {
+    @include lgMinBreakPoint {
+      display: $computed;
+    }
+    @include mdMinBreakPoint {
+      display: $computed;
+    }
+  }
+}

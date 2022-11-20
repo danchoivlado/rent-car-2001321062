@@ -1,0 +1,39 @@
+@use "../../sassStyles" as *;
+
+.jobContent {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 0.75rem;
+    // transform: translateY(-115%);
+    position: absolute;
+    top: -26px;
+    left: 20px;
+  }
+
+  .lightText {
+    color: $lightTextColor;
+  }
+
+  .job-tittle {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .location {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: $accentTextColor;
+    margin-top: 20px;
+  }
+}

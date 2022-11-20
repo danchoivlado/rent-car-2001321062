@@ -1,0 +1,15 @@
+@use "../../sassStyles" as *;
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.0625rem 1rem;
+
+  @include mdMinBreakPoint {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include lgMinBreakPoint {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

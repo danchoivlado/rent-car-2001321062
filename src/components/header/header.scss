@@ -1,0 +1,17 @@
+@use "../../sassStyles" as *;
+
+header {
+  background-image: url("../../assets/mobile/bg-pattern-header.svg");
+
+  padding-top: 2rem;
+  padding-bottom: 4.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

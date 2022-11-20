@@ -1,0 +1,16 @@
+@use "./mixins" as m;
+@use "./variables";
+
+.job-header-h2 {
+  font-size: 1.25rem;
+  @include m.mdMinBreakPoint {
+    font-size: 1.5rem;
+  }
+}
+
+.job-tittle-h1 {
+  font-size: 1.25rem;
+  @include m.mdMinBreakPoint {
+    font-size: 1.75rem;
+  }
+}

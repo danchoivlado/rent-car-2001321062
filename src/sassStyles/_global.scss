@@ -1,0 +1,66 @@
+@use "./variables" as v;
+@use "./mixins" as *;
+
+body {
+  font-family: v.$primary-font-family;
+}
+
+.contentWrapper {
+  margin-left: 1.625rem;
+  margin-right: 1.625rem;
+}
+
+.mainwrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  background-color: v.$bg-color;
+}
+
+.contentPadding {
+  padding-left: v.$padding;
+  padding-right: v.$padding;
+}
+
+.whiteText {
+  color: white;
+}
+
+.darkText {
+  color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.white-secondary {
+  background-color: v.$bg-color;
+}
+
+.dark-primary {
+  background-color: v.$black-theme-primary;
+}
+
+.dark-secondary {
+  background-color: v.$black-theme-secondary;
+}
+
+.hiddenDisplayBlock {
+  display: none;
+  @include mdMinBreakPoint {
+    display: block;
+  }
+}
+
+.hiddenDisplayFlex {
+  display: none;
+
+  @include mdMinBreakPoint {
+    display: flex;
+  }
+}

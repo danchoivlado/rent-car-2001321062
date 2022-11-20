@@ -1,0 +1,68 @@
+@use "../../sassStyles" as *;
+
+.searchContainer {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.3rem;
+  transform: translateY(-50%);
+
+  .btn-container {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.popUpContainer {
+  transition: 1s;
+}
+
+.popUpContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filterImageContainer {
+  width: 1.25rem;
+  height: 1.25rem;
+  &:hover {
+    cursor: pointer;
+  }
+  @include customDisplayresponsive(block, none, md);
+}
+
+.containerElement {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  align-items: center;
+}
+
+.searchImageContainer {
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  flex-shrink: 0;
+  @include customDisplayresponsive(none, block, md);
+}
+
+.search-image-conainer {
+  &:hover {
+    cursor: pointer;
+  }
+  width: 1.25rem;
+  height: 1.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+// @include customDisplayresponsive(none, block, lg);
+
+input[type="text"] {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  width: 100%;
+}
