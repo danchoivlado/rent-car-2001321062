@@ -27,9 +27,9 @@ const JobItem = ({ jobInfo }: Props) => {
     logoBackground,
     position,
   } = jobInfo;
-  const imageName = logo.substring(logo.lastIndexOf("/")).slice(1);
+
   const [darkThemeEnabled] = useThemeContext();
-  const [image, error, loading] = useImportImage({ imageName: imageName });
+  const [image, error, loading] = useImportImage({ logo });
 
   return (
     <div

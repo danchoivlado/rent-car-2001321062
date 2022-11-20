@@ -8,15 +8,14 @@ import { ErrorInterface } from "../interfaces";
 import logos from "../assets/logos/scoot.svg";
 
 interface Props {
-  imageName: string;
+  logo: string;
 }
 
-const useImportImage = ({
-  imageName,
-}: Props): [any, ErrorInterface, boolean] => {
+const useImportImage = ({ logo }: Props): [any, ErrorInterface, boolean] => {
   const [image, setImage] = useState<any>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorInterface>({ error: false });
+  const imageName = logo.substring(logo.lastIndexOf("/")).slice(1);
 
   const importImage = async () => {
     try {
