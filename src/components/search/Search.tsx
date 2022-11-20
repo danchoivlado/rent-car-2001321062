@@ -25,8 +25,6 @@ const Search = ({}: Props) => {
   const handleSearchClcik = () => {
     const isEmpty = [fullTimeOnly, location, title].every((x) => !x);
     if (isEmpty) {
-      console.log("clears");
-
       dispatch &&
         dispatch({
           type: JobActionType.CLEAR,
