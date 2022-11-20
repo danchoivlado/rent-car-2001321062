@@ -1,12 +1,16 @@
 import "./search-button.scss";
 
 interface Props {
+  handleClick: () => void;
   inPopUp?: boolean;
 }
 
-const SearchButton = ({ inPopUp }: Props) => {
+const SearchButton = ({ inPopUp, handleClick }: Props) => {
   return (
-    <button className={`${inPopUp ? `search-btnInPopUp` : `search-btn`}`}>
+    <button
+      onClick={handleClick}
+      className={`${inPopUp ? `search-btnInPopUp` : `search-btn`}`}
+    >
       {inPopUp ? (
         "Search"
       ) : (

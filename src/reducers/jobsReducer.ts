@@ -18,16 +18,18 @@ export default function (state: JobsState, action: JobAction): JobsState {
       }
       if (location) {
         filteredValue = filteredValue.filter((job) =>
-          job.location.includes(location)
+          job.location.toLowerCase().includes(location.toLowerCase())
         );
       }
       if (title) {
         filteredValue = filteredValue.filter((job) =>
-          job.position.includes(title)
+          job.position.toLowerCase().includes(title.toLowerCase())
         );
       }
 
-      return { jobs: filteredValue };
-      break;
+      return { ...state, filter: filteredValue };
+
+    case JobActionType.CLEAR:
+      return { ...state, filter: undefined };
   }
 }

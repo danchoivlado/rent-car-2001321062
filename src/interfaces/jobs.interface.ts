@@ -28,6 +28,7 @@ export interface JobsFilter {
 
 export enum JobActionType {
   FILTER = "FILTER",
+  CLEAR = "CLEAR",
 }
 
 export interface JobAction {
@@ -37,4 +38,5 @@ export interface JobAction {
 
 export interface JobsState {
   jobs: Job[];
+  filter?: Job[];
 }

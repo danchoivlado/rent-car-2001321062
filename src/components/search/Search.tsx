@@ -1,25 +1,47 @@
 import { useState } from "react";
-import filterIcon from "../../assets/mobile/icon-filter.svg";
 import searchIcon from "../../assets/desktop/icon-search.svg";
-import iconLocation from "../../assets/desktop/icon-location.svg";
-import iconCheck from "../../assets/desktop/icon-check.svg";
-import "./search.scss";
+import filterIcon from "../../assets/mobile/icon-filter.svg";
+import { useThemeContext } from "../../providers/ThemeContext";
+
+import "../../sassStyles/index.scss";
+import Filter from "../filter/Filter";
 import PopUp from "../popUp/PopUp";
 import SearchButton from "../searchButton/SearchButton";
-import Filter from "../filter/Filter";
-import { JobsFilter } from "../../interfaces/jobs.interface";
-import { useThemeContext } from "../../providers/ThemeContext";
-import "../../sassStyles/index.scss";
+import "./search.scss";
+import { JobAction, JobActionType } from "../../interfaces";
+import { useDispatch } from "../../providers/JobsContext";
 
-interface Props {
-  // handleFilter: (filter: JobsFilter) => void;
-}
+interface Props {}
 
 const Search = ({}: Props) => {
   const [fullTimeOnly, setFullTimeOnly] = useState(false);
   const [isFileterClicked, setIsFilterClicked] = useState(false);
+  const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
   const [darkThemeEnabled] = useThemeContext();
+
+  const dispatch = useDispatch();
+
+  const handleSearchClcik = () => {
+    const isEmpty = [fullTimeOnly, location, title].every((x) => !x);
+    if (isEmpty) {
+      console.log("clears");
+
+      dispatch &&
+        dispatch({
+          type: JobActionType.CLEAR,
+          payload: { fullTime: fullTimeOnly, location, title },
+        });
+      return;
+    }
+
+    const jobAction: JobAction = {
+      payload: { fullTime: fullTimeOnly, location, title },
+      type: JobActionType.FILTER,
+    };
+
+    dispatch && dispatch(jobAction);
+  };
 
   const handleFilterClick = () => {
     setIsFilterClicked((prev) => !prev);
@@ -37,6 +59,8 @@ const Search = ({}: Props) => {
             <img src={searchIcon} alt="" />
           </div>
           <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             className={`${darkThemeEnabled ? "dark-secondary" : "white"}`}
             type="text"
             placeholder="Filter by tittle..."
@@ -57,7 +81,7 @@ const Search = ({}: Props) => {
             <img src={filterIcon} alt="" />
           </div>
           <div>
-            <SearchButton />
+            <SearchButton handleClick={handleSearchClcik} />
           </div>
         </div>
       </div>
@@ -71,7 +95,7 @@ const Search = ({}: Props) => {
               setFullTimeOnly={setFullTimeOnly}
               setLocation={setLocation}
             />
-            <SearchButton inPopUp={true} />
+            <SearchButton inPopUp={true} handleClick={handleSearchClcik} />
           </div>
         </PopUp>
       </div>
