@@ -5,6 +5,7 @@ import "./sassStyles/_reset.scss";
 import ThemeContext from "./providers/ThemeContext";
 import { BrowserRouter } from "react-router-dom";
 import JobsContext from "./providers/JobsContext";
+import SizeContext from "./providers/SizeContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,9 @@ root.render(
     <BrowserRouter>
       <ThemeContext>
         <JobsContext>
-          <App />
+          <SizeContext>
+            <App />
+          </SizeContext>
         </JobsContext>
       </ThemeContext>
     </BrowserRouter>

@@ -57,6 +57,43 @@ main {
   }
 }
 
+.buttonPrimary {
+  border: none;
+  background-color: v.$primaryColor;
+  border-radius: 0.3rem;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  color: white;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.buttonSecondary {
+  @extend .buttonPrimary;
+  background-color: v.$secondaryColor;
+  color: v.$accentTextColor;
+
+  &:hover {
+    opacity: 1;
+    background-color: v.$secondaryAccentColor;
+  }
+}
+
+.buttonSecondaryDark {
+  @extend .buttonPrimary;
+  background-color: v.$black-theme-accent;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.lightText {
+  color: v.$lightTextColor;
+}
+
 .hiddenDisplayFlex {
   display: none;
 

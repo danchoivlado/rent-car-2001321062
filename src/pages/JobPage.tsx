@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import "./job-page.scss";
 import { useThemeContext } from "../providers/ThemeContext";
 import useImportImage from "../hooks/useImportImage";
+import SizeContext, { useSizeContext } from "../providers/SizeContext";
+import "./job-page.scss";
 
 const JobPage = () => {
   const navigate = useNavigate();
@@ -19,7 +21,9 @@ const JobPage = () => {
     }
   }, [currentJob]);
 
-  const { logo, logoBackground, company } = currentJob[0];
+  const { logo, logoBackground, company, website } = currentJob[0];
+
+  const sizeContext = useSizeContext();
 
   const [image, error, loading] = useImportImage({ logo });
 
@@ -36,8 +40,17 @@ const JobPage = () => {
         >
           {!loading && error && <img src={image} alt="" />}
         </div>
-
-        <h2 className="job-header-h2">{company}</h2>
+        <div className="jobCompanyText">
+          <h2 className="job-header-h2">{company}</h2>
+          <p className="lightText">{website}</p>
+        </div>
+        <button
+          className={`${
+            darkThemeEnabled ? "buttonSecondaryDark" : "buttonSecondary"
+          }`}
+        >
+          Company Site
+        </button>
       </div>
       <div
         className={`jobMain restrictionWrapper ${
