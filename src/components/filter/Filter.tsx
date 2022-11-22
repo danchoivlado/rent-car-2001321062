@@ -27,7 +27,7 @@ const Filter = ({
           <img src={iconLocation} alt="" />
         </div>
         <input
-          className={`${darkThemeEnabled ? "dark-secondary" : "white"}`}
+          className={`${darkThemeEnabled ? "darkSecondary" : "white"}`}
           type="text"
           placeholder="Filter by location..."
           value={location}

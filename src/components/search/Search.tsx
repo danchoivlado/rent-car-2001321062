@@ -49,7 +49,7 @@ const Search = ({}: Props) => {
     <>
       <div
         className={`searchContainer ${
-          darkThemeEnabled ? "dark-secondary" : "white"
+          darkThemeEnabled ? "darkSecondary" : "white"
         }`}
       >
         <div className="containerElement">
@@ -59,7 +59,7 @@ const Search = ({}: Props) => {
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className={`${darkThemeEnabled ? "dark-secondary" : "white"}`}
+            className={`${darkThemeEnabled ? "darkSecondary" : "white"}`}
             type="text"
             placeholder="Filter by tittle..."
           />

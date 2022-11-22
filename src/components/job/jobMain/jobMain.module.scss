@@ -1,0 +1,32 @@
+@use "../../../sassStyles/index.scss" as *;
+@use "../../../pages/job-page.scss";
+
+.jobMain {
+  padding: 2.5rem 1.25rem;
+
+  .buttonPrimary {
+    width: 100%;
+  }
+
+  .specs {
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+  }
+
+  .jobMainHeader {
+    display: flex;
+    gap: 3.125rem;
+    flex-direction: column;
+  }
+
+  @include mdMinBreakPoint {
+    padding: 2.5rem 3.125rem;
+    .jobMainHeader {
+      gap: 3.125rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

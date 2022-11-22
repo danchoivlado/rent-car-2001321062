@@ -1,0 +1,23 @@
+@use "../../../sassStyles/index.scss" as *;
+@use "../../../pages/job-page.scss";
+
+.jobFooter {
+  margin-top: 4rem;
+  .buttonPrimary {
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    // padding: 20px 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include mdMinBreakPoint {
+    .buttonPrimary {
+      width: inherit;
+    }
+  }
+}

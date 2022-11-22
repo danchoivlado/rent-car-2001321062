@@ -1,11 +1,11 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useJobs } from "../providers/JobsContext";
 import { useEffect } from "react";
-import "./job-page.scss";
+import { useNavigate, useParams } from "react-router-dom";
+import JobHeader from "../components/job/jobHeader/JobHeader";
+import { useJobs } from "../providers/JobsContext";
 import { useThemeContext } from "../providers/ThemeContext";
-import useImportImage from "../hooks/useImportImage";
-import SizeContext, { useSizeContext } from "../providers/SizeContext";
+import JobMain from "../components/job/jobMain/JobMain";
 import "./job-page.scss";
+import JobFooter from "../components/job/JobFooter/JobFooter";
 
 const JobPage = () => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ const JobPage = () => {
   const [darkThemeEnabled] = useThemeContext();
 
   const currentJob = jobs.filter((job) => job.id === Number(id));
+  const { company, position } = currentJob[0];
 
   useEffect(() => {
     if (!currentJob.length) {
@@ -21,49 +22,11 @@ const JobPage = () => {
     }
   }, [currentJob]);
 
-  const { logo, logoBackground, company, website } = currentJob[0];
-
-  const sizeContext = useSizeContext();
-
-  const [image, error, loading] = useImportImage({ logo });
-
   return (
     <div className="job">
-      <div
-        className={`jobHeader restrictionWrapper ${
-          darkThemeEnabled ? "dark-secondary" : "white"
-        }`}
-      >
-        <div
-          className="imageContainer"
-          style={{ backgroundColor: logoBackground }}
-        >
-          {!loading && error && <img src={image} alt="" />}
-        </div>
-        <div className="jobCompanyText">
-          <h2 className="job-header-h2">{company}</h2>
-          <p className="lightText">{website}</p>
-        </div>
-        <button
-          className={`${
-            darkThemeEnabled ? "buttonSecondaryDark" : "buttonSecondary"
-          }`}
-        >
-          Company Site
-        </button>
-      </div>
-      <div
-        className={`jobMain restrictionWrapper ${
-          darkThemeEnabled ? "dark-secondary" : "white"
-        }`}
-      >
-        2
-      </div>
-      <div
-        className={`jobFooter ${darkThemeEnabled ? "dark-secondary" : "white"}`}
-      >
-        <div className="restrictionWrapper">3</div>
-      </div>
+      <JobHeader {...currentJob[0]} />
+      <JobMain job={currentJob[0]}></JobMain>
+      <JobFooter company={company} position={position} />
     </div>
   );
 };

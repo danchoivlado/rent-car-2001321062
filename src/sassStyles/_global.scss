@@ -26,6 +26,10 @@ main {
   padding-right: v.$padding;
 }
 
+.lightTextColor {
+  color: v.$lightTextColor;
+}
+
 .whiteText {
   color: white;
 }
@@ -46,7 +50,7 @@ main {
   background-color: v.$black-theme-primary;
 }
 
-.dark-secondary {
+.darkSecondary {
   background-color: v.$black-theme-secondary;
 }
 

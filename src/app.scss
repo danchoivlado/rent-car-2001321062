@@ -1,19 +1,9 @@
 @use "./sassStyles" as *;
 
-h1 {
-  color: $primaryColor;
-}
-
 .wrapperContainer {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   max-width: 65.625rem;
   position: relative;
-}
-
-@include mdMinBreakPoint {
-  h1 {
-    color: red;
-  }
 }

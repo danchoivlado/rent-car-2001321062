@@ -1,16 +1,24 @@
 @use "./mixins" as m;
-@use "./variables";
+@use "./variables" as v;
 
-.job-header-h2 {
+.jobHeaderH2 {
   font-size: 1.25rem;
   @include m.mdMinBreakPoint {
     font-size: 1.5rem;
   }
 }
 
-.job-tittle-h1 {
+.jobTittleH1 {
   font-size: 1.25rem;
   @include m.mdMinBreakPoint {
     font-size: 1.75rem;
   }
+}
+
+.accentTextColor {
+  color: v.$accentTextColor;
+}
+
+.heavyFont {
+  font-weight: 700;
 }

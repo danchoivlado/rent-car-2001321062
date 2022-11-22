@@ -8,3 +8,8 @@ export enum ScreenTypes {
   MD = "MD",
   LG = "LG",
 }
+
+export enum ListType {
+  UL = "UL",
+  OL = "OL",
+}

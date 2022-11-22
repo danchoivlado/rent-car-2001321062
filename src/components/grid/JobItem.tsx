@@ -33,7 +33,7 @@ const JobItem = ({ jobInfo }: Props) => {
 
   return (
     <div
-      className={`jobContent ${darkThemeEnabled ? "dark-secondary" : "white"}`}
+      className={`jobContent ${darkThemeEnabled ? "darkSecondary" : "white"}`}
     >
       <div
         className="imageContainer"

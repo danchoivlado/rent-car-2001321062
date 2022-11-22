@@ -10,14 +10,13 @@ export interface Job {
   website: string;
   apply: string;
   description: string;
-  requirements: {
-    content: string;
-    items: string[];
-  };
-  role: {
-    content: string;
-    items: string[];
-  };
+  requirements: JobSpec;
+  role: JobSpec;
+}
+
+export interface JobSpec {
+  content: string;
+  items: string[];
 }
 
 export interface JobsFilter {
