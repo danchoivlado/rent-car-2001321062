@@ -8,7 +8,6 @@ interface Props {
 
 const Jobs = () => {
   const jobsState = useJobs();
-  console.log(jobsState, "qm kur");
 
   const jobs = jobsState.filter ? jobsState.filter : jobsState.jobs;
 
