@@ -23,5 +23,55 @@
     "pricePerDay": 55.22,
     "numberOfFreeVehicles": 4,
     "logo": "https://seeklogo.com/images/B/bmw-logo-248C3D90E6-seeklogo.com.png"
+  },
+
+  {
+    "id": 3,
+    "vehicleType": "estate",
+    "brand": "Fiat",
+    "model": "Punto",
+    "year": 2003,
+    "numberOfSeats": 4,
+    "picture": "https://cdn3.focus.bg/autodata/i/fiat/punto/punto-ii-188/large/232796a2202f81ae201c406dd09f8add.jpg",
+    "pricePerDay": 12.22,
+    "numberOfFreeVehicles": 5,
+    "logo": "https://seeklogo.com/images/F/FIAT_2007_OLD-logo-4195DE7DDB-seeklogo.com.png"
+  },
+  {
+    "id": 4,
+    "vehicleType": "estate",
+    "brand": "Audi",
+    "model": "A 3",
+    "year": 2005,
+    "numberOfSeats": 4,
+    "picture": "https://cdn3.focus.bg/autodata/i/audi/a3/a3-8l/large/f90ca4bc32614a42e0939c149612262c.jpg",
+    "pricePerDay": 60.22,
+    "numberOfFreeVehicles": 2,
+    "logo": "https://seeklogo.com/images/A/Audi-logo-C9C1408988-seeklogo.com.png"
+  },
+
+  {
+    "id": 5,
+    "vehicleType": "estate",
+    "brand": "Karuca",
+    "model": "NOVA",
+    "year": 2222,
+    "numberOfSeats": 30,
+    "picture": "https://webnews.bg/uploads/images/55/7355/17355/orig.jpg?_=1446802470",
+    "pricePerDay": 60.22,
+    "numberOfFreeVehicles": 2,
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1JekyeXsJV-_W-OQP57_1pO_ezgGu1D7mg&usqp=CAU"
+  },
+  {
+    "id": 6,
+    "vehicleType": "estate",
+    "brand": "Mazda",
+    "model": "3",
+    "year": 2007,
+    "numberOfSeats": 4,
+    "picture": "https://autobild.bg/wp-content/uploads/2020/12/33-720x533.jpg",
+    "pricePerDay": 20.22,
+    "numberOfFreeVehicles": 1,
+    "logo": "https://seeklogo.com/images/M/MAZDA-logo-83817F8537-seeklogo.com.png"
   }
 ]

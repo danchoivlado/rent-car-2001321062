@@ -2,6 +2,7 @@ import { createContext, useState, useContext } from "react";
 import { User } from "../interfaces";
 interface UserVal {
   email: string;
+  rented?: number[];
 }
 
 const initialUser: UserVal = {

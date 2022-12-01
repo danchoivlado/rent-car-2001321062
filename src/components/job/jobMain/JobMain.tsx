@@ -30,7 +30,11 @@ const JobMain = ({
 
   const handleClick = () => {
     if (!user!.email) {
-      // nav;
+      navigate("/login");
+    } else {
+      const allRented = user?.rented || [];
+      allRented.push(id);
+      setUser!({ ...user!, rented: allRented });
     }
   };
 
@@ -60,7 +64,7 @@ const JobMain = ({
         </div>
         <div>
           <button onClick={handleClick} className={styles.buttonPrimary}>
-            Rent
+            {user?.rented?.some((x) => x === id) ? "Rented" : "Rent"}
           </button>
         </div>
       </div>
