@@ -1,8 +1,10 @@
 import { Job, ListType } from "../../../interfaces";
 import { useThemeContext } from "../../../providers/ThemeContext";
+import { useUserContext } from "../../../providers/UserContext";
 import JobSpecs from "../JobSpecs/JobSpecs";
 import JobSpec from "../JobSpecs/JobSpecs";
 import styles from "./jobMain.module.scss";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   job: Job;
@@ -23,6 +25,14 @@ const JobMain = ({
   },
 }: Props) => {
   const [darkThemeEnabled] = useThemeContext();
+  const [user, setUser] = useUserContext();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (!user!.email) {
+      // nav;
+    }
+  };
 
   return (
     <div
@@ -49,7 +59,9 @@ const JobMain = ({
           </p>
         </div>
         <div>
-          <button className={styles.buttonPrimary}>Rent</button>
+          <button onClick={handleClick} className={styles.buttonPrimary}>
+            Rent
+          </button>
         </div>
       </div>
       <div

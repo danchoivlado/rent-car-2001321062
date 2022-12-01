@@ -1,6 +1,7 @@
 import "./job.scss";
 import useImportImage from "../../hooks/useImportImage";
 import { useThemeContext } from "../../providers/ThemeContext";
+import { useUserContext } from "../../providers/UserContext";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -33,6 +34,8 @@ const JobItem = ({ jobInfo }: Props) => {
   } = jobInfo;
 
   const [darkThemeEnabled] = useThemeContext();
+  // const [user, setUser] = useUserContext();
+  // console.log(user, "let");
 
   return (
     <div
