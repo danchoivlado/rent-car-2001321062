@@ -3,15 +3,31 @@ import { useThemeContext } from "../../../providers/ThemeContext";
 import styles from "./jobHeader.module.scss";
 
 interface Props {
+  id: number;
+  vehicleType: string;
+  brand: string;
+  model: string;
+  year: number;
+  numberOfSeats: number;
+  picture: string;
+  pricePerDay: number;
   logo: string;
-  logoBackground: string;
-  company: string;
-  website: string;
+  numberOfFreeVehicles: number;
 }
 
-const JobHeader = ({ company, logo, logoBackground, website }: Props) => {
+const JobHeader = ({
+  brand,
+  id,
+  logo,
+  model,
+  numberOfFreeVehicles,
+  numberOfSeats,
+  picture,
+  pricePerDay,
+  vehicleType,
+  year,
+}: Props) => {
   const [darkThemeEnabled] = useThemeContext();
-  const [image, error, loading] = useImportImage({ logo });
 
   return (
     <div
@@ -19,28 +35,23 @@ const JobHeader = ({ company, logo, logoBackground, website }: Props) => {
         darkThemeEnabled ? styles.darkSecondary : "white"
       }`}
     >
-      <div
-        className={styles.imageContainer}
-        style={{ backgroundColor: logoBackground }}
-      >
-        {!loading && error && <img src={image} alt="" />}
-      </div>
+      <div className={styles.imageContainer}>{<img src={logo} alt="" />}</div>
       <div className={styles.jobCompanyText}>
         <h2
           className={`${styles.jobHeaderH2} ${
             darkThemeEnabled && styles.whiteText
           }`}
         >
-          {company}
+          {brand}
         </h2>
-        <p className={styles.lightText}>{website}</p>
+        <p className={styles.lightText}>{model}</p>
       </div>
       <button
         className={`${
           darkThemeEnabled ? styles.buttonSecondaryDark : styles.buttonSecondary
         }`}
       >
-        Company Site
+        {`${numberOfFreeVehicles > 0 ? "Available" : "Not Available"}`}
       </button>
     </div>
   );

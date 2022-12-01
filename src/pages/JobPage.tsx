@@ -14,7 +14,7 @@ const JobPage = () => {
   const [darkThemeEnabled] = useThemeContext();
 
   const currentJob = jobs.filter((job) => job.id === Number(id));
-  const { company, position } = currentJob[0];
+  // const { company, position } = currentJob[0];
 
   useEffect(() => {
     if (!currentJob.length) {
@@ -26,7 +26,7 @@ const JobPage = () => {
     <div className="job">
       <JobHeader {...currentJob[0]} />
       <JobMain job={currentJob[0]}></JobMain>
-      <JobFooter company={company} position={position} />
+      {/* <JobFooter company={company} position={position} /> */}
     </div>
   );
 };

@@ -1,17 +1,14 @@
 export interface Job {
   id: number;
-  company: string;
+  vehicleType: string;
+  brand: string;
+  model: string;
+  year: number;
+  numberOfSeats: number;
+  picture: string;
+  pricePerDay: number;
+  numberOfFreeVehicles: number;
   logo: string;
-  logoBackground: string;
-  position: string;
-  postedAt: string;
-  contract: string;
-  location: string;
-  website: string;
-  apply: string;
-  description: string;
-  requirements: JobSpec;
-  role: JobSpec;
 }
 
 export interface JobSpec {

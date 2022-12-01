@@ -83,20 +83,6 @@ const Search = ({}: Props) => {
           </div>
         </div>
       </div>
-      <div className="popUpContainer">
-        <PopUp close={handleFilterClick} show={isFileterClicked}>
-          <div className="popUpContent">
-            <Filter
-              fullTimeOnly={fullTimeOnly}
-              inPopUp={true}
-              location={location}
-              setFullTimeOnly={setFullTimeOnly}
-              setLocation={setLocation}
-            />
-            <SearchButton inPopUp={true} handleClick={handleSearchClcik} />
-          </div>
-        </PopUp>
-      </div>
     </>
   );
 };

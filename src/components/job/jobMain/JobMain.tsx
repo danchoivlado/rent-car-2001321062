@@ -9,7 +9,18 @@ interface Props {
 }
 
 const JobMain = ({
-  job: { location, position, postedAt, description, requirements, role },
+  job: {
+    brand,
+    id,
+    logo,
+    model,
+    numberOfFreeVehicles,
+    numberOfSeats,
+    picture,
+    pricePerDay,
+    vehicleType,
+    year,
+  },
 }: Props) => {
   const [darkThemeEnabled] = useThemeContext();
 
@@ -21,36 +32,30 @@ const JobMain = ({
     >
       <div className={styles.jobMainHeader}>
         <div>
-          <p className={styles.lightText}>{postedAt}</p>
-          <h1
-            className={`${styles.jobTittleH1} ${
-              darkThemeEnabled && styles.whiteText
-            }`}
-          >
-            {position}
-          </h1>
-          <p className={`${styles.accentTextColor} ${styles.heavyFont}`}>
-            {location}
+          <p className={`${darkThemeEnabled && styles.whiteText}`}>
+            Number of free vehicles: {numberOfFreeVehicles}
+          </p>
+          <p className={`${darkThemeEnabled && styles.whiteText}`}>
+            Number of seats: {numberOfSeats}
+          </p>
+          <p className={`${darkThemeEnabled && styles.whiteText}`}>
+            Price per day: {pricePerDay}
+          </p>
+          <p className={`${darkThemeEnabled && styles.whiteText}`}>
+            Vehicle type: {vehicleType}
+          </p>
+          <p className={`${darkThemeEnabled && styles.whiteText}`}>
+            Year of production: {year}
           </p>
         </div>
         <div>
-          <button className={styles.buttonPrimary}>Apply Now</button>
+          <button className={styles.buttonPrimary}>Rent</button>
         </div>
       </div>
       <div
         className={`${styles.specs} ${darkThemeEnabled && styles.whiteText} `}
       >
-        <p>{description}</p>
-        <JobSpecs
-          listType={ListType.UL}
-          specsTypeText="Requirements"
-          specs={requirements}
-        />
-        <JobSpecs
-          listType={ListType.OL}
-          specsTypeText="What You Will Do"
-          specs={role}
-        />
+        <img src={picture}></img>
       </div>
     </div>
   );

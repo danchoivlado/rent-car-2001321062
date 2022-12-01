@@ -1,5 +1,5 @@
 import "./header.scss";
-import logo from "../../assets/desktop/logo.svg";
+import logo from "../../assets/desktop/RentCar.svg";
 import Toggle from "../toggle/Toggle";
 import { Link } from "react-router-dom";
 

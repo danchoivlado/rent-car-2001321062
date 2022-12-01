@@ -6,45 +6,43 @@ import { Link } from "react-router-dom";
 interface Props {
   jobInfo: {
     id: number;
+    vehicleType: string;
+    brand: string;
+    model: string;
+    year: number;
+    numberOfSeats: number;
+    picture: string;
+    pricePerDay: number;
     logo: string;
-    postedAt: string;
-    contract: string;
-    company: string;
-    location: string;
-    logoBackground: string;
-    position: string;
+    numberOfFreeVehicles: number;
   };
 }
 
 const JobItem = ({ jobInfo }: Props) => {
   const {
     id,
-    company,
-    contract,
-    location,
+    brand,
+    model,
+    numberOfFreeVehicles,
+    numberOfSeats,
+    picture,
+    pricePerDay,
+    vehicleType,
+    year,
     logo,
-    postedAt,
-    logoBackground,
-    position,
   } = jobInfo;
 
   const [darkThemeEnabled] = useThemeContext();
-  const [image, error, loading] = useImportImage({ logo });
 
   return (
     <div
       className={`jobContent ${darkThemeEnabled ? "darkSecondary" : "white"}`}
     >
-      <div
-        className="imageContainer"
-        style={{ backgroundColor: logoBackground }}
-      >
-        {!loading && !error.error && <img src={image}></img>}
-      </div>
+      <div className="imageContainer">{<img src={logo}></img>}</div>
       <p className="lightText">
-        {postedAt}
+        {brand}
         &nbsp; &middot; &nbsp;
-        {contract}
+        {model}
       </p>
       <Link style={{ textDecoration: "none" }} to={`/${id}`}>
         <p
@@ -52,11 +50,11 @@ const JobItem = ({ jobInfo }: Props) => {
             darkThemeEnabled ? "whiteText" : "darkText"
           }`}
         >
-          {position}
+          More Info Here
         </p>
       </Link>
-      <p className="lightText">{company}</p>
-      <p className="location">{location}</p>
+      <p className="lightText">Type of vehicle: {vehicleType}</p>
+      <p className="location">Year of production {year}</p>
     </div>
   );
 };

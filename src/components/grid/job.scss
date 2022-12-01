@@ -19,6 +19,11 @@
     position: absolute;
     top: -26px;
     left: 20px;
+    img {
+      width: 3.125rem;
+      height: 3.125rem;
+      object-fit: contain;
+    }
   }
 
   .lightText {
